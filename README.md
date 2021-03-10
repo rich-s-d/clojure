@@ -1,6 +1,10 @@
 # clojure-cheat-sheets
 Personal repo for working with clojure
 
+## Opstart af shadow-cljs project
+https://www.jost.dk/cljs/
+
+
 ## functions
 filter
 
