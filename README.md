@@ -1,4 +1,4 @@
-# clojure-cheat-sheets
+# Readme is a clojure-cheat-sheet. Repo otherwise for learning clojure.
 Personal repo for working with clojure
 
 ## Opstart af shadow-cljs project
