@@ -6,7 +6,7 @@
 (def current-value (r/atom 0))
 (def zero-atom (r/atom ""))
 (def xy-atom (atom {:x 0 :y "" :z "" :sym ""}))
-(def mem-atom (atom 0))
+(def mem-atom (r/atom 0))
 
 
 (defn get-value [event]
@@ -30,7 +30,7 @@
       (do
         (print @xy-atom)
         (swap! xy-atom update-in [:sym] + event )
-        (swap! xy-atom update-in [:z] + (:y @xy-atom))
+        (if (= (:z @xy-atom) "") (swap! xy-atom update-in [:z] + (:y @xy-atom)))
         (swap! xy-atom assoc-in [:y] "")
         (print @xy-atom)
         )
@@ -42,16 +42,20 @@
                                          (:sym @xy-atom)
                                          (:y @xy-atom)
                                          )))
+      (reset! xy-atom {:y "" :z @current-value :sym ""})
+      ;(swap! xy-atom update-in [:z] + @current-value)
       (print @xy-atom)
       )
 
 (defn add-to-memory []
       (print @mem-atom)
       (print @xy-atom)
-      (swap! mem-atom + @current-value)
+      ;(reset! current-value (:y @xy-atom))
+      (swap! mem-atom (fn [n] (+ n (js/eval @current-value))))
+
+      ;(swap! my-atom (fn [n] (* (+ n n) 2)))
       (print @mem-atom)
-      (print @xy-atom)
-      )
+      (print @xy-atom))
 
 (defn mem-recall []
       (print @mem-atom)

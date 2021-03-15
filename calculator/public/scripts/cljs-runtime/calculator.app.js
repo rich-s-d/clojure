@@ -2,7 +2,7 @@ goog.provide('calculator.app');
 calculator.app.current_value = reagent.core.atom.cljs$core$IFn$_invoke$arity$1((0));
 calculator.app.zero_atom = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("");
 calculator.app.xy_atom = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),"",new cljs.core.Keyword(null,"sym","sym",-1444860305),""], null));
-calculator.app.mem_atom = cljs.core.atom.cljs$core$IFn$_invoke$arity$1((0));
+calculator.app.mem_atom = reagent.core.atom.cljs$core$IFn$_invoke$arity$1((0));
 calculator.app.get_value = (function calculator$app$get_value(event){
 cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
 
@@ -24,7 +24,10 @@ cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$cor
 
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom,cljs.core.update_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"sym","sym",-1444860305)], null),cljs.core._PLUS_,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([event], 0));
 
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)),"")){
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom,cljs.core.update_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"z","z",-789527183)], null),cljs.core._PLUS_,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))], 0));
+} else {
+}
 
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),"");
 
@@ -35,6 +38,8 @@ cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$cor
 
 cljs.core.reset_BANG_(calculator.app.current_value,eval([cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))),cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"sym","sym",-1444860305).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))),cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)))].join('')));
 
+cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),cljs.core.deref(calculator.app.current_value),new cljs.core.Keyword(null,"sym","sym",-1444860305),""], null));
+
 return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
 });
 calculator.app.add_to_memory = (function calculator$app$add_to_memory(){
@@ -42,7 +47,9 @@ cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$cor
 
 cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
 
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(calculator.app.mem_atom,cljs.core._PLUS_,cljs.core.deref(calculator.app.current_value));
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(calculator.app.mem_atom,(function (n){
+return (n + eval(cljs.core.deref(calculator.app.current_value)));
+}));
 
 cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.mem_atom)], 0));
 
