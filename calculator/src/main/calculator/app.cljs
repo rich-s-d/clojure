@@ -4,7 +4,6 @@
     [reagent.dom :as rdom]))
 
 (def current-value (r/atom 0))
-(def zero-atom (r/atom ""))
 (def xy-atom (atom {:x 0 :y "" :z "" :sym ""}))
 (def mem-atom (r/atom 0))
 (def valuta-atom (r/atom ""))
@@ -13,21 +12,19 @@
 (defn get-value [event]
       (print @xy-atom)
       (js/console.log event)
-      ;(reset! current-value event)
-      ;(swap! xy-atom update-in [:x] + event )
       (swap! xy-atom update-in [:y] + event)
       (reset! current-value (:y @xy-atom))
       (print @xy-atom))
+      (print @valuta-atom)
 
 
 (defn clear-display []
       (reset! current-value 0)
       (reset! xy-atom {:x 0 :y "" :z "" :sym ""})
+      (reset! valuta-atom "")
       )
 
 (defn calculate [event]
-      ;calculate result for every computing
-      ;(@y @sym )
       (do
         (print @xy-atom)
         (swap! xy-atom update-in [:sym] + event )
@@ -44,17 +41,13 @@
                                          (:y @xy-atom)
                                          )))
       (reset! xy-atom {:y "" :z @current-value :sym ""})
-      ;(swap! xy-atom update-in [:z] + @current-value)
       (print @xy-atom)
       )
 
 (defn add-to-memory []
       (print @mem-atom)
       (print @xy-atom)
-      ;(reset! current-value (:y @xy-atom))
       (swap! mem-atom (fn [n] (+ n (js/eval @current-value))))
-
-      ;(swap! my-atom (fn [n] (* (+ n n) 2)))
       (print @mem-atom)
       (print @xy-atom))
 
@@ -93,15 +86,16 @@
       (reset! current-value (* (js/eval (:y @xy-atom)) (get v event)))
       (reset! valuta-atom event)
       (print @xy-atom)
+      (print @valuta-atom)
       )
 
 (defn mini-app []
       [:table  {:border "1"}                                ;{:style "width:100%"}
        [:tbody
         [:tr
-         [:td {:colspan "2"} [:input#result {:readonly "" :type "text" :value  @current-value }]]
-         [:td {:colspan "1"} [:input#result {:readonly "" :type "text" :value  @valuta-atom }]]
-         [:td {:colspan "1"} [:input {:type "button" :value "c" :on-click #(clear-display)} ]]]
+         [:td  {:colspan "2"} [:input#result {:readonly "" :type "text" :value  @current-value }]]
+         [:td  {:colspan "2"} [:input#result {:readonly "" :type "text" :value  @valuta-atom }]]
+         [:td  {:colspan "1"} [:input {:type "button" :value "c" :on-click #(clear-display)} ]]]
         [:tr
          [:td [:input {:type "button" :value "1" :on-click #(get-value 1)  }]]
          [:td [:input {:type "button" :value "2" :on-click #(get-value 2) }]]
@@ -124,8 +118,8 @@
          [:td [:input {:type "button" :value "*" :on-click #(calculate "*")}]]]
         [:tr
          [:td [:input {:type "button" :value "π" :on-click #(pi)}]]
-         [:td [:input {:type "button" :value "MemRs." :on-click #(mem-reset)}]]
-         [:td [:input {:type "button" :value "MemRc." :on-click #(mem-recall)}]]
+         [:td [:input {:type "button" :value "MemReset" :on-click #(mem-reset)}]]
+         [:td [:input {:type "button" :value "MemRecall" :on-click #(mem-recall)}]]
          [:td [:input {:type "button" :value "Mem+" :on-click #(add-to-memory)}]]]
         [:tr
          [:td [:input {:type "button" :value "x²" :on-click #(x-squared)}]]
