@@ -7,6 +7,7 @@
 (def zero-atom (r/atom ""))
 (def xy-atom (atom {:x 0 :y "" :z "" :sym ""}))
 (def mem-atom (r/atom 0))
+(def valuta-atom (r/atom ""))
 
 
 (defn get-value [event]
@@ -85,12 +86,22 @@
       (print @xy-atom)
       )
 
+(defn valuta [event]
+      (print @xy-atom)
+      (def v {"£" 0.1154,  "US$" 0.1603, "€" 0.1344})
+      (print event, v)
+      (reset! current-value (* (js/eval (:y @xy-atom)) (get v event)))
+      (reset! valuta-atom event)
+      (print @xy-atom)
+      )
+
 (defn mini-app []
-      [:table {:border "1"}
+      [:table  {:border "1"}                                ;{:style "width:100%"}
        [:tbody
         [:tr
-         [:td {:colspan "3"} [:input#result {:readonly "" :type "text" :value  @current-value  }]]
-         [:td [:input {:type "button" :value "c" :on-click #(clear-display)} ]]]
+         [:td {:colspan "2"} [:input#result {:readonly "" :type "text" :value  @current-value }]]
+         [:td {:colspan "1"} [:input#result {:readonly "" :type "text" :value  @valuta-atom }]]
+         [:td {:colspan "1"} [:input {:type "button" :value "c" :on-click #(clear-display)} ]]]
         [:tr
          [:td [:input {:type "button" :value "1" :on-click #(get-value 1)  }]]
          [:td [:input {:type "button" :value "2" :on-click #(get-value 2) }]]
@@ -113,14 +124,14 @@
          [:td [:input {:type "button" :value "*" :on-click #(calculate "*")}]]]
         [:tr
          [:td [:input {:type "button" :value "π" :on-click #(pi)}]]
-         [:td [:input {:type "button" :value "MemReset" :on-click #(mem-reset)}]]
-         [:td [:input {:type "button" :value "MemRecall" :on-click #(mem-recall)}]]
+         [:td [:input {:type "button" :value "MemRs." :on-click #(mem-reset)}]]
+         [:td [:input {:type "button" :value "MemRc." :on-click #(mem-recall)}]]
          [:td [:input {:type "button" :value "Mem+" :on-click #(add-to-memory)}]]]
         [:tr
          [:td [:input {:type "button" :value "x²" :on-click #(x-squared)}]]
-         [:td [:input {:type "button" :value "Sp." :on-click #()}]]
-         [:td [:input {:type "button" :value "Sp." :on-click #()}]]
-         [:td [:input {:type "button" :value "Sp." :on-click #()}]]]]])
+         [:td [:input {:type "button" :value "£" :on-click #(valuta "£")}]]
+         [:td [:input {:type "button" :value "US$" :on-click #(valuta "US$")}]]
+         [:td [:input {:type "button" :value "€" :on-click #(valuta "€")}]]]]])
 
 (defn ^:export run []
       (rdom/render [mini-app] (js/document.getElementById "app")))
