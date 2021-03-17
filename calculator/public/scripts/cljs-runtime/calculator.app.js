@@ -4,17 +4,12 @@ calculator.app.xy_atom = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.c
 calculator.app.mem_atom = reagent.core.atom.cljs$core$IFn$_invoke$arity$1((0));
 calculator.app.valuta_atom = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("");
 calculator.app.get_value = (function calculator$app$get_value(event){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
 console.log(event);
 
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom,cljs.core.update_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),cljs.core._PLUS_,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([event], 0));
 
-cljs.core.reset_BANG_(calculator.app.current_value,new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)));
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
+return cljs.core.reset_BANG_(calculator.app.current_value,new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)));
 });
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.valuta_atom)], 0));
 calculator.app.clear_display = (function calculator$app$clear_display(){
 cljs.core.reset_BANG_(calculator.app.current_value,(0));
 
@@ -23,8 +18,6 @@ cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(nu
 return cljs.core.reset_BANG_(calculator.app.valuta_atom,"");
 });
 calculator.app.calculate = (function calculator$app$calculate(event){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom,cljs.core.update_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"sym","sym",-1444860305)], null),cljs.core._PLUS_,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([event], 0));
 
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)),"")){
@@ -32,83 +25,42 @@ cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom
 } else {
 }
 
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),"");
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),"");
 });
 calculator.app.result = (function calculator$app$result(){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
 cljs.core.reset_BANG_(calculator.app.current_value,eval([cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))),cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"sym","sym",-1444860305).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))),cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)))].join('')));
 
-cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),cljs.core.deref(calculator.app.current_value),new cljs.core.Keyword(null,"sym","sym",-1444860305),""], null));
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
+return cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),cljs.core.deref(calculator.app.current_value),new cljs.core.Keyword(null,"sym","sym",-1444860305),""], null));
 });
 calculator.app.add_to_memory = (function calculator$app$add_to_memory(){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.mem_atom)], 0));
-
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(calculator.app.mem_atom,(function (n){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(calculator.app.mem_atom,(function (n){
 return (n + eval(cljs.core.deref(calculator.app.current_value)));
 }));
-
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.mem_atom)], 0));
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
 });
 calculator.app.mem_recall = (function calculator$app$mem_recall(){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.mem_atom)], 0));
-
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),cljs.core.deref(calculator.app.mem_atom));
 
-cljs.core.reset_BANG_(calculator.app.current_value,cljs.core.deref(calculator.app.mem_atom));
-
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.mem_atom)], 0));
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
+return cljs.core.reset_BANG_(calculator.app.current_value,cljs.core.deref(calculator.app.mem_atom));
 });
 calculator.app.mem_reset = (function calculator$app$mem_reset(){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.mem_atom)], 0));
-
 return cljs.core.reset_BANG_(calculator.app.mem_atom,(0));
 });
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.mem_atom)], 0));
 calculator.app.pi = (function calculator$app$pi(){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
 cljs.core.reset_BANG_(calculator.app.current_value,Math.PI);
 
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),cljs.core.deref(calculator.app.current_value));
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),cljs.core.deref(calculator.app.current_value));
 });
 calculator.app.x_squared = (function calculator$app$x_squared(){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
 cljs.core.reset_BANG_(calculator.app.current_value,(cljs.core.deref(calculator.app.current_value) * cljs.core.deref(calculator.app.current_value)));
 
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),cljs.core.deref(calculator.app.current_value));
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),cljs.core.deref(calculator.app.current_value));
 });
 calculator.app.valuta = (function calculator$app$valuta(event){
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
 calculator.app.v = new cljs.core.PersistentArrayMap(null, 3, ["\u00A3",0.1154,"US$",0.1603,"\u20AC",0.1344], null);
-
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([event,calculator.app.v], 0));
 
 cljs.core.reset_BANG_(calculator.app.current_value,(eval(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))) * cljs.core.get.cljs$core$IFn$_invoke$arity$2(calculator.app.v,event)));
 
-cljs.core.reset_BANG_(calculator.app.valuta_atom,event);
-
-cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.xy_atom)], 0));
-
-return cljs.core.print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.deref(calculator.app.valuta_atom)], 0));
+return cljs.core.reset_BANG_(calculator.app.valuta_atom,event);
 });
 calculator.app.mini_app = (function calculator$app$mini_app(){
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"table","table",-564943036),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"border","border",1444987323),"1"], null),new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"tbody","tbody",-80678300),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"tr","tr",-1424774646),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"colspan","colspan",-1512420934),"2"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input#result","input#result",2091538331),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"readonly","readonly",-1101398934),"",new cljs.core.Keyword(null,"type","type",1174270348),"text",new cljs.core.Keyword(null,"value","value",305978217),cljs.core.deref(calculator.app.current_value)], null)], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"colspan","colspan",-1512420934),"2"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input#result","input#result",2091538331),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"readonly","readonly",-1101398934),"",new cljs.core.Keyword(null,"type","type",1174270348),"text",new cljs.core.Keyword(null,"value","value",305978217),cljs.core.deref(calculator.app.valuta_atom)], null)], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"colspan","colspan",-1512420934),"1"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"c",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){

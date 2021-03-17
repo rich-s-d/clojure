@@ -3,20 +3,17 @@
     [reagent.core :as r]
     [reagent.dom :as rdom]))
 
+
 (def current-value (r/atom 0))
 (def xy-atom (atom {:x 0 :y "" :z "" :sym ""}))
 (def mem-atom (r/atom 0))
 (def valuta-atom (r/atom ""))
 
-
 (defn get-value [event]
-      (print @xy-atom)
       (js/console.log event)
       (swap! xy-atom update-in [:y] + event)
       (reset! current-value (:y @xy-atom))
-      (print @xy-atom))
-      (print @valuta-atom)
-
+      )
 
 (defn clear-display []
       (reset! current-value 0)
@@ -25,68 +22,46 @@
       )
 
 (defn calculate [event]
-      (do
-        (print @xy-atom)
-        (swap! xy-atom update-in [:sym] + event )
-        (if (= (:z @xy-atom) "") (swap! xy-atom update-in [:z] + (:y @xy-atom)))
-        (swap! xy-atom assoc-in [:y] "")
-        (print @xy-atom)
-        )
+      (swap! xy-atom update-in [:sym] + event )
+      (if (= (:z @xy-atom) "") (swap! xy-atom update-in [:z] + (:y @xy-atom)))
+      (swap! xy-atom assoc-in [:y] "")
       )
 
 (defn result []
-      (print @xy-atom)
       (reset! current-value (js/eval (str(:z @xy-atom)
                                          (:sym @xy-atom)
                                          (:y @xy-atom)
                                          )))
       (reset! xy-atom {:y "" :z @current-value :sym ""})
-      (print @xy-atom)
       )
 
 (defn add-to-memory []
-      (print @mem-atom)
-      (print @xy-atom)
       (swap! mem-atom (fn [n] (+ n (js/eval @current-value))))
-      (print @mem-atom)
-      (print @xy-atom))
+      )
 
 (defn mem-recall []
-      (print @mem-atom)
-      (print @xy-atom)
       (swap! xy-atom assoc-in [:y] @mem-atom)
       (reset! current-value @mem-atom)
-      (print @mem-atom)
-      (print @xy-atom)
       )
 
 (defn mem-reset []
-      (print @mem-atom)
       (reset! mem-atom 0))
-      (print @mem-atom)
+
 
 (defn pi []
-      (print @xy-atom)
       (reset! current-value (.-PI js/Math))                               ;
       (swap! xy-atom assoc-in [:y] @current-value)
-      (print @xy-atom)
       )
 
 (defn x-squared []
-      (print @xy-atom)
       (reset! current-value (* @current-value @current-value))
       (swap! xy-atom assoc-in [:y] @current-value)
-      (print @xy-atom)
       )
 
 (defn valuta [event]
-      (print @xy-atom)
       (def v {"£" 0.1154,  "US$" 0.1603, "€" 0.1344})
-      (print event, v)
       (reset! current-value (* (js/eval (:y @xy-atom)) (get v event)))
       (reset! valuta-atom event)
-      (print @xy-atom)
-      (print @valuta-atom)
       )
 
 (defn mini-app []
@@ -129,6 +104,7 @@
 
 (defn ^:export run []
       (rdom/render [mini-app] (js/document.getElementById "app")))
+
 (defn ^:export reload []
       (.log js/console "reload...")
       (run))
