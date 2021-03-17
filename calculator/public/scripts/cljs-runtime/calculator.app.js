@@ -1,6 +1,6 @@
 goog.provide('calculator.app');
 calculator.app.current_value = reagent.core.atom.cljs$core$IFn$_invoke$arity$1((0));
-calculator.app.xy_atom = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),"",new cljs.core.Keyword(null,"sym","sym",-1444860305),""], null));
+calculator.app.xy_atom = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),"",new cljs.core.Keyword(null,"sym","sym",-1444860305),null], null));
 calculator.app.mem_atom = reagent.core.atom.cljs$core$IFn$_invoke$arity$1((0));
 calculator.app.valuta_atom = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("");
 calculator.app.get_value = (function calculator$app$get_value(event){
@@ -13,12 +13,12 @@ return cljs.core.reset_BANG_(calculator.app.current_value,new cljs.core.Keyword(
 calculator.app.clear_display = (function calculator$app$clear_display(){
 cljs.core.reset_BANG_(calculator.app.current_value,(0));
 
-cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),"",new cljs.core.Keyword(null,"sym","sym",-1444860305),""], null));
+cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"x","x",2099068185),(0),new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),"",new cljs.core.Keyword(null,"sym","sym",-1444860305),null], null));
 
 return cljs.core.reset_BANG_(calculator.app.valuta_atom,"");
 });
 calculator.app.calculate = (function calculator$app$calculate(event){
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom,cljs.core.update_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"sym","sym",-1444860305)], null),cljs.core._PLUS_,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([event], 0));
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"sym","sym",-1444860305)], null),event);
 
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)),"")){
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom,cljs.core.update_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"z","z",-789527183)], null),cljs.core._PLUS_,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))], 0));
@@ -28,13 +28,17 @@ cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(calculator.app.xy_atom
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"y","y",-1757859776)], null),"");
 });
 calculator.app.result = (function calculator$app$result(){
-cljs.core.reset_BANG_(calculator.app.current_value,eval([cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))),cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"sym","sym",-1444860305).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))),cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)))].join('')));
+cljs.core.reset_BANG_(calculator.app.current_value,(function (){var G__27598 = cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)));
+var G__27599 = cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom)));
+var fexpr__27597 = new cljs.core.Keyword(null,"sym","sym",-1444860305).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom));
+return (fexpr__27597.cljs$core$IFn$_invoke$arity$2 ? fexpr__27597.cljs$core$IFn$_invoke$arity$2(G__27598,G__27599) : fexpr__27597.call(null,G__27598,G__27599));
+})());
 
-return cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),cljs.core.deref(calculator.app.current_value),new cljs.core.Keyword(null,"sym","sym",-1444860305),""], null));
+return cljs.core.reset_BANG_(calculator.app.xy_atom,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"y","y",-1757859776),"",new cljs.core.Keyword(null,"z","z",-789527183),cljs.core.deref(calculator.app.current_value),new cljs.core.Keyword(null,"sym","sym",-1444860305),null], null));
 });
 calculator.app.add_to_memory = (function calculator$app$add_to_memory(){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(calculator.app.mem_atom,(function (n){
-return (n + eval(cljs.core.deref(calculator.app.current_value)));
+return (n + cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.current_value)));
 }));
 });
 calculator.app.mem_recall = (function calculator$app$mem_recall(){
@@ -58,7 +62,7 @@ return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(calculator.app.xy_atom
 calculator.app.valuta = (function calculator$app$valuta(event){
 calculator.app.v = new cljs.core.PersistentArrayMap(null, 3, ["\u00A3",0.1154,"US$",0.1603,"\u20AC",0.1344], null);
 
-cljs.core.reset_BANG_(calculator.app.current_value,(eval(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))) * cljs.core.get.cljs$core$IFn$_invoke$arity$2(calculator.app.v,event)));
+cljs.core.reset_BANG_(calculator.app.current_value,(cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(calculator.app.xy_atom))) * cljs.core.get.cljs$core$IFn$_invoke$arity$2(calculator.app.v,event)));
 
 return cljs.core.reset_BANG_(calculator.app.valuta_atom,event);
 });
@@ -72,7 +76,7 @@ return calculator.app.get_value((2));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"3",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.get_value((3));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"/",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
-return calculator.app.calculate("/");
+return calculator.app.calculate(cljs.core._SLASH_);
 })], null)], null)], null)], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"tr","tr",-1424774646),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"4",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.get_value((4));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"5",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
@@ -80,7 +84,7 @@ return calculator.app.get_value((5));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"6",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.get_value((6));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"-",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
-return calculator.app.calculate("-");
+return calculator.app.calculate(cljs.core._);
 })], null)], null)], null)], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"tr","tr",-1424774646),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"7",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.get_value((7));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"8",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
@@ -88,7 +92,7 @@ return calculator.app.get_value((8));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"9",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.get_value((9));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"+",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
-return calculator.app.calculate("+");
+return calculator.app.calculate(cljs.core._PLUS_);
 })], null)], null)], null)], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"tr","tr",-1424774646),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),".",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.get_value(".");
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"0",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
@@ -96,7 +100,7 @@ return calculator.app.get_value((0));
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"=",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.result();
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"*",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
-return calculator.app.calculate("*");
+return calculator.app.calculate(cljs.core._STAR_);
 })], null)], null)], null)], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"tr","tr",-1424774646),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"\u03C0",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return calculator.app.pi();
 })], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"td","td",1479933353),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"type","type",1174270348),"button",new cljs.core.Keyword(null,"value","value",305978217),"MemReset",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
