@@ -5,6 +5,9 @@ Personal repo for working with clojure
 https://www.jost.dk/cljs/
 
 
+## conventions
+function! name with ! indicates side effects.
+
 ## functions
 filter
 
